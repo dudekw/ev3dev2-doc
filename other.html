@@ -1,0 +1,1095 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Other classes &#8212; python-ev3dev 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Working with ev3dev remotely using RPyC" href="rpyc.html" />
+    <link rel="prev" title="Sensor classes" href="sensors.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          python-ev3dev</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://github.com/ev3dev/ev3dev-lang-python">GitHub</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="upgrading-to-stretch.html">Upgrading from ev3dev-jessie (library v1) to ev3dev-stretch (library v2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrading-to-stretch.html#once-you-ve-adapted-to-breaking-changes-check-out-the-cool-new-features">Once you’ve adapted to breaking changes, check out the cool new features!</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="spec.html">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpyc.html">Working with ev3dev remotely using RPyC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently-Asked Questions</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Other classes</a><ul>
+<li><a class="reference internal" href="#button">Button</a></li>
+<li><a class="reference internal" href="#leds">Leds</a><ul>
+<li><a class="reference internal" href="#led-group-and-color-names">LED group and color names</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#power-supply">Power Supply</a></li>
+<li><a class="reference internal" href="#sound">Sound</a></li>
+<li><a class="reference internal" href="#display">Display</a><ul>
+<li><a class="reference internal" href="#bitmap-fonts">Bitmap fonts</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#lego-port">Lego Port</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="sensors.html" title="Previous Chapter: Sensor classes"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Sensor classes</span>
+    </a>
+  </li>
+  <li>
+    <a href="rpyc.html" title="Next Chapter: Working with ev3dev remotely using RPyC"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Working with ... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/other.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="other-classes">
+<h1>Other classes<a class="headerlink" href="#other-classes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="button">
+<h2>Button<a class="headerlink" href="#button" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="ev3dev2.button.Button">
+<em class="property">class </em><code class="descclassname">ev3dev2.button.</code><code class="descname">Button</code><a class="headerlink" href="#ev3dev2.button.Button" title="Permalink to this definition">¶</a></dt>
+<dd><p>EVB Buttons</p>
+<p class="rubric">Event handlers</p>
+<p>These will be called when state of the corresponding button is changed:</p>
+<dl class="data">
+<dt id="ev3dev2.button.Button.on_up">
+<code class="descname">on_up</code><a class="headerlink" href="#ev3dev2.button.Button.on_up" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="ev3dev2.button.Button.on_down">
+<code class="descname">on_down</code><a class="headerlink" href="#ev3dev2.button.Button.on_down" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="ev3dev2.button.Button.on_left">
+<code class="descname">on_left</code><a class="headerlink" href="#ev3dev2.button.Button.on_left" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="ev3dev2.button.Button.on_right">
+<code class="descname">on_right</code><a class="headerlink" href="#ev3dev2.button.Button.on_right" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="ev3dev2.button.Button.on_enter">
+<code class="descname">on_enter</code><a class="headerlink" href="#ev3dev2.button.Button.on_enter" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="data">
+<dt id="ev3dev2.button.Button.on_backspace">
+<code class="descname">on_backspace</code><a class="headerlink" href="#ev3dev2.button.Button.on_backspace" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Member functions and properties</p>
+<dl class="attribute">
+<dt id="ev3dev2.button.Button.evdev_device_name">
+<code class="descname">evdev_device_name</code><em class="property"> = None</em><a class="headerlink" href="#ev3dev2.button.Button.evdev_device_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>These handlers are called by <cite>process()</cite> whenever state of ‘up’, ‘down’,
+etc buttons have changed since last <cite>process()</cite> call</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.button.Button.up">
+<code class="descname">up</code><a class="headerlink" href="#ev3dev2.button.Button.up" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if ‘up’ button is pressed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.button.Button.down">
+<code class="descname">down</code><a class="headerlink" href="#ev3dev2.button.Button.down" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if ‘down’ button is pressed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.button.Button.left">
+<code class="descname">left</code><a class="headerlink" href="#ev3dev2.button.Button.left" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if ‘left’ button is pressed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.button.Button.right">
+<code class="descname">right</code><a class="headerlink" href="#ev3dev2.button.Button.right" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if ‘right’ button is pressed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.button.Button.enter">
+<code class="descname">enter</code><a class="headerlink" href="#ev3dev2.button.Button.enter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if ‘enter’ button is pressed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.button.Button.any">
+<code class="descname">any</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.button.Button.any" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if any button is pressed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.button.Button.backspace">
+<code class="descname">backspace</code><a class="headerlink" href="#ev3dev2.button.Button.backspace" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if ‘backspace’ button is pressed.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.button.Button.buttons_pressed">
+<code class="descname">buttons_pressed</code><a class="headerlink" href="#ev3dev2.button.Button.buttons_pressed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns list of names of pressed buttons.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.button.Button.check_buttons">
+<code class="descname">check_buttons</code><span class="sig-paren">(</span><em>buttons=[]</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.button.Button.check_buttons" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if currently pressed buttons exactly match the given list.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.button.Button.evdev_device">
+<code class="descname">evdev_device</code><a class="headerlink" href="#ev3dev2.button.Button.evdev_device" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return our corresponding evdev device object</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="ev3dev2.button.Button.on_change">
+<em class="property">static </em><code class="descname">on_change</code><span class="sig-paren">(</span><em>changed_buttons</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.button.Button.on_change" title="Permalink to this definition">¶</a></dt>
+<dd><p>This handler is called by <cite>process()</cite> whenever state of any button has
+changed since last <cite>process()</cite> call. <cite>changed_buttons</cite> is a list of
+tuples of changed button names and their states.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.button.Button.process">
+<code class="descname">process</code><span class="sig-paren">(</span><em>new_state=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.button.Button.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check for currenly pressed buttons. If the new state differs from the
+old state, call the appropriate button event handlers.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.button.Button.wait_for_bump">
+<code class="descname">wait_for_bump</code><span class="sig-paren">(</span><em>buttons</em>, <em>timeout_ms=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.button.Button.wait_for_bump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait for the button to be pressed down and then released.
+Both actions must happen within timeout_ms.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="leds">
+<h2>Leds<a class="headerlink" href="#leds" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="ev3dev2.led.Led">
+<em class="property">class </em><code class="descclassname">ev3dev2.led.</code><code class="descname">Led</code><span class="sig-paren">(</span><em>name_pattern='*'</em>, <em>name_exact=False</em>, <em>desc=None</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.led.Led" title="Permalink to this definition">¶</a></dt>
+<dd><p>Any device controlled by the generic LED driver.
+See <a class="reference external" href="https://www.kernel.org/doc/Documentation/leds/leds-class.txt">https://www.kernel.org/doc/Documentation/leds/leds-class.txt</a>
+for more details.</p>
+<dl class="attribute">
+<dt id="ev3dev2.led.Led.max_brightness">
+<code class="descname">max_brightness</code><a class="headerlink" href="#ev3dev2.led.Led.max_brightness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the maximum allowable brightness value.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.led.Led.brightness">
+<code class="descname">brightness</code><a class="headerlink" href="#ev3dev2.led.Led.brightness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the brightness level. Possible values are from 0 to <cite>max_brightness</cite>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.led.Led.triggers">
+<code class="descname">triggers</code><a class="headerlink" href="#ev3dev2.led.Led.triggers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of available triggers.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.led.Led.trigger">
+<code class="descname">trigger</code><a class="headerlink" href="#ev3dev2.led.Led.trigger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the led trigger. A trigger
+is a kernel based source of led events. Triggers can either be simple or
+complex. A simple trigger isn’t configurable and is designed to slot into
+existing subsystems with minimal additional code. Examples are the <cite>ide-disk</cite> and
+<cite>nand-disk</cite> triggers.</p>
+<p>Complex triggers whilst available to all LEDs have LED specific
+parameters and work on a per LED basis. The <cite>timer</cite> trigger is an example.
+The <cite>timer</cite> trigger will periodically change the LED brightness between
+0 and the current brightness setting. The <cite>on</cite> and <cite>off</cite> time can
+be specified via <cite>delay_{on,off}</cite> attributes in milliseconds.
+You can change the brightness value of a LED independently of the timer
+trigger. However, if you set the brightness value to 0 it will
+also disable the <cite>timer</cite> trigger.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.led.Led.delay_on">
+<code class="descname">delay_on</code><a class="headerlink" href="#ev3dev2.led.Led.delay_on" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>timer</cite> trigger will periodically change the LED brightness between
+0 and the current brightness setting. The <cite>on</cite> time can
+be specified via <cite>delay_on</cite> attribute in milliseconds.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.led.Led.delay_off">
+<code class="descname">delay_off</code><a class="headerlink" href="#ev3dev2.led.Led.delay_off" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>timer</cite> trigger will periodically change the LED brightness between
+0 and the current brightness setting. The <cite>off</cite> time can
+be specified via <cite>delay_off</cite> attribute in milliseconds.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.led.Led.brightness_pct">
+<code class="descname">brightness_pct</code><a class="headerlink" href="#ev3dev2.led.Led.brightness_pct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns led brightness as a fraction of max_brightness</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="ev3dev2.led.Leds">
+<em class="property">class </em><code class="descclassname">ev3dev2.led.</code><code class="descname">Leds</code><a class="headerlink" href="#ev3dev2.led.Leds" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="ev3dev2.led.Leds.set_color">
+<code class="descname">set_color</code><span class="sig-paren">(</span><em>group</em>, <em>color</em>, <em>pct=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.led.Leds.set_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets brigthness of leds in the given group to the values specified in
+color tuple. When percentage is specified, brightness of each led is
+reduced proportionally.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_leds</span> <span class="o">=</span> <span class="n">Leds</span><span class="p">()</span>
+<span class="n">my_leds</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;LEFT&#39;</span><span class="p">,</span> <span class="s1">&#39;AMBER&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>With a custom color:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_leds</span> <span class="o">=</span> <span class="n">Leds</span><span class="p">()</span>
+<span class="n">my_leds</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;LEFT&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.led.Leds.set">
+<code class="descname">set</code><span class="sig-paren">(</span><em>group</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.led.Leds.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set attributes for each led in group.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_leds</span> <span class="o">=</span> <span class="n">Leds</span><span class="p">()</span>
+<span class="n">my_leds</span><span class="o">.</span><span class="n">set_color</span><span class="p">(</span><span class="s1">&#39;LEFT&#39;</span><span class="p">,</span> <span class="n">brightness_pct</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">trigger</span><span class="o">=</span><span class="s1">&#39;timer&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.led.Leds.all_off">
+<code class="descname">all_off</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.led.Leds.all_off" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn all leds off</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="led-group-and-color-names">
+<h3>LED group and color names<a class="headerlink" href="#led-group-and-color-names" title="Permalink to this headline">¶</a></h3>
+<p class="rubric">EV3 platform</p>
+<p>Led groups:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">LEFT</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">RIGHT</span></code></li>
+</ul>
+<p>Colors:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">BLACK</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">RED</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">GREEN</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">AMBER</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">ORANGE</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">YELLOW</span></code></li>
+</ul>
+<p class="rubric">BrickPI platform</p>
+<p>Led groups:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">LED1</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">LED2</span></code></li>
+</ul>
+<p>Colors:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">BLACK</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">BLUE</span></code></li>
+</ul>
+<p class="rubric">BrickPI3 platform</p>
+<p>Led groups:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">LED</span></code></li>
+</ul>
+<p>Colors:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">BLACK</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">BLUE</span></code></li>
+</ul>
+<p class="rubric">PiStorms platform</p>
+<p>Led groups:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">LEFT</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">RIGHT</span></code></li>
+</ul>
+<p>Colors:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">BLACK</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">RED</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">GREEN</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">BLUE</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">YELLOW</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">CYAN</span></code></li>
+<li><code class="docutils literal notranslate"><span class="pre">MAGENTA</span></code></li>
+</ul>
+<p class="rubric">EVB platform</p>
+<p>None.</p>
+</div>
+</div>
+<div class="section" id="power-supply">
+<h2>Power Supply<a class="headerlink" href="#power-supply" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="ev3dev2.power.PowerSupply">
+<em class="property">class </em><code class="descclassname">ev3dev2.power.</code><code class="descname">PowerSupply</code><span class="sig-paren">(</span><em>address=None</em>, <em>name_pattern='*'</em>, <em>name_exact=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.power.PowerSupply" title="Permalink to this definition">¶</a></dt>
+<dd><p>A generic interface to read data from the system’s power_supply class.
+Uses the built-in legoev3-battery if none is specified.</p>
+<dl class="attribute">
+<dt id="ev3dev2.power.PowerSupply.measured_current">
+<code class="descname">measured_current</code><a class="headerlink" href="#ev3dev2.power.PowerSupply.measured_current" title="Permalink to this definition">¶</a></dt>
+<dd><p>The measured current that the battery is supplying (in microamps)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.power.PowerSupply.measured_voltage">
+<code class="descname">measured_voltage</code><a class="headerlink" href="#ev3dev2.power.PowerSupply.measured_voltage" title="Permalink to this definition">¶</a></dt>
+<dd><p>The measured voltage that the battery is supplying (in microvolts)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.power.PowerSupply.max_voltage">
+<code class="descname">max_voltage</code><a class="headerlink" href="#ev3dev2.power.PowerSupply.max_voltage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.power.PowerSupply.min_voltage">
+<code class="descname">min_voltage</code><a class="headerlink" href="#ev3dev2.power.PowerSupply.min_voltage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.power.PowerSupply.technology">
+<code class="descname">technology</code><a class="headerlink" href="#ev3dev2.power.PowerSupply.technology" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.power.PowerSupply.type">
+<code class="descname">type</code><a class="headerlink" href="#ev3dev2.power.PowerSupply.type" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.power.PowerSupply.measured_amps">
+<code class="descname">measured_amps</code><a class="headerlink" href="#ev3dev2.power.PowerSupply.measured_amps" title="Permalink to this definition">¶</a></dt>
+<dd><p>The measured current that the battery is supplying (in amps)</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.power.PowerSupply.measured_volts">
+<code class="descname">measured_volts</code><a class="headerlink" href="#ev3dev2.power.PowerSupply.measured_volts" title="Permalink to this definition">¶</a></dt>
+<dd><p>The measured voltage that the battery is supplying (in volts)</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="sound">
+<h2>Sound<a class="headerlink" href="#sound" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="ev3dev2.sound.Sound">
+<em class="property">class </em><code class="descclassname">ev3dev2.sound.</code><code class="descname">Sound</code><a class="headerlink" href="#ev3dev2.sound.Sound" title="Permalink to this definition">¶</a></dt>
+<dd><p>Support beep, play wav files, or convert text to speech.</p>
+<p>Note that all methods of the class spawn system processes and return
+subprocess.Popen objects. The methods are asynchronous (they return
+immediately after child process was spawned, without waiting for its
+completion), but you can call wait() on the returned result.</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Play &#39;bark.wav&#39;:</span>
+<span class="n">Sound</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="s1">&#39;bark.wav&#39;</span><span class="p">)</span>
+
+<span class="c1"># Introduce yourself:</span>
+<span class="n">Sound</span><span class="o">.</span><span class="n">speak</span><span class="p">(</span><span class="s1">&#39;Hello, I am Robot&#39;</span><span class="p">)</span>
+
+<span class="c1"># Play a small song</span>
+<span class="n">Sound</span><span class="o">.</span><span class="n">play_song</span><span class="p">((</span>
+    <span class="p">(</span><span class="s1">&#39;D4&#39;</span><span class="p">,</span> <span class="s1">&#39;e3&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;D4&#39;</span><span class="p">,</span> <span class="s1">&#39;e3&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;D4&#39;</span><span class="p">,</span> <span class="s1">&#39;e3&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;G4&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;D5&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">)</span>
+<span class="p">))</span>
+</pre></div>
+</div>
+<p>In order to mimic EV3-G API parameters, durations used in methods
+exposed as EV3-G blocks for sound related operations are expressed
+as a float number of seconds.</p>
+<dl class="attribute">
+<dt id="ev3dev2.sound.Sound.PLAY_WAIT_FOR_COMPLETE">
+<code class="descname">PLAY_WAIT_FOR_COMPLETE</code><em class="property"> = 0</em><a class="headerlink" href="#ev3dev2.sound.Sound.PLAY_WAIT_FOR_COMPLETE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Play the sound and block until it is complete</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sound.Sound.PLAY_NO_WAIT_FOR_COMPLETE">
+<code class="descname">PLAY_NO_WAIT_FOR_COMPLETE</code><em class="property"> = 1</em><a class="headerlink" href="#ev3dev2.sound.Sound.PLAY_NO_WAIT_FOR_COMPLETE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start playing the sound but return immediately</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sound.Sound.PLAY_LOOP">
+<code class="descname">PLAY_LOOP</code><em class="property"> = 2</em><a class="headerlink" href="#ev3dev2.sound.Sound.PLAY_LOOP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Never return; start the sound immediately after it completes, until the program is killed</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sound.Sound.beep">
+<code class="descname">beep</code><span class="sig-paren">(</span><em>args=''</em>, <em>play_type=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sound.Sound.beep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Call beep command with the provided arguments (if any).
+See <a class="reference external" href="https://linux.die.net/man/1/beep">beep man page</a> and google <a class="reference external" href="https://www.google.com/search?q=linux+beep+music">linux beep music</a> for inspiration.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>args</strong> (<em>string</em>) – Any additional arguments to be passed to <code class="docutils literal notranslate"><span class="pre">beep</span></code> (see the <a class="reference external" href="https://linux.die.net/man/1/beep">beep man page</a> for details)</li>
+<li><strong>play_type</strong> (<code class="docutils literal notranslate"><span class="pre">Sound.PLAY_WAIT_FOR_COMPLETE</span></code> or  <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_NO_WAIT_FOR_COMPLETE</span></code>) – The behavior of <code class="docutils literal notranslate"><span class="pre">beep</span></code> once playback has been initiated</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">When <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_NO_WAIT_FOR_COMPLETE</span></code> is specified, returns the returns the spawn subprocess from <code class="docutils literal notranslate"><span class="pre">subprocess.Popen</span></code>; <code class="docutils literal notranslate"><span class="pre">None</span></code> otherwise</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sound.Sound.tone">
+<code class="descname">tone</code><span class="sig-paren">(</span><em>*args</em>, <em>play_type=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sound.Sound.tone" title="Permalink to this definition">¶</a></dt>
+<dd><p class="rubric">tone(tone_sequence)</p>
+<p>Play tone sequence.</p>
+<p>Here is a cheerful example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">my_sound</span> <span class="o">=</span> <span class="n">Sound</span><span class="p">()</span>
+<span class="n">my_sound</span><span class="o">.</span><span class="n">tone</span><span class="p">([</span>
+    <span class="p">(</span><span class="mi">392</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">392</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">392</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">311.1</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">466.2</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">392</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">311.1</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">466.2</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">392</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">587.32</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">587.32</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">587.32</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">622.26</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">466.2</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">369.99</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">311.1</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">466.2</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">392</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">784</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">392</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">392</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">784</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">739.98</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">698.46</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">659.26</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">622.26</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">659.26</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span> <span class="p">(</span><span class="mf">415.3</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="p">(</span><span class="mf">554.36</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">523.25</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">493.88</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">466.16</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">440</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">466.16</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span> <span class="p">(</span><span class="mf">311.13</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span> <span class="p">(</span><span class="mf">369.99</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">311.13</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">392</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">466.16</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">392</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">466.16</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">587.32</span><span class="p">,</span> <span class="mi">700</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">784</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">392</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">392</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">784</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">739.98</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">698.46</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">659.26</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">622.26</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">659.26</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span> <span class="p">(</span><span class="mf">415.3</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">554.36</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">523.25</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">493.88</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">466.16</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">440</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">466.16</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">400</span><span class="p">),</span> <span class="p">(</span><span class="mf">311.13</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">200</span><span class="p">),</span>
+    <span class="p">(</span><span class="mi">392</span><span class="p">,</span> <span class="mi">350</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">311.13</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">466.16</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span>
+    <span class="p">(</span><span class="mf">392.00</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="mi">150</span><span class="p">),</span> <span class="p">(</span><span class="mf">311.13</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">466.16</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mi">392</span><span class="p">,</span> <span class="mi">700</span><span class="p">)</span>
+    <span class="p">])</span>
+</pre></div>
+</div>
+<p>Have also a look at <a class="reference internal" href="#ev3dev2.sound.Sound.play_song" title="ev3dev2.sound.Sound.play_song"><code class="xref py py-meth docutils literal notranslate"><span class="pre">play_song()</span></code></a> for a more musician-friendly way of doing, which uses
+the conventional notation for notes and durations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>tone_sequence</strong> (<em>list</em><em>[</em><em>tuple</em><em>(</em><em>float</em><em>,</em><em>float</em><em>,</em><em>float</em><em>)</em><em>]</em>) – The sequence of tones to play. The first number of each tuple is frequency in Hz, the second is duration in milliseconds, and the third is delay in milliseconds between this and the next tone in the sequence.</li>
+<li><strong>play_type</strong> (<code class="docutils literal notranslate"><span class="pre">Sound.PLAY_WAIT_FOR_COMPLETE</span></code> or <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_NO_WAIT_FOR_COMPLETE</span></code>) – The behavior of <code class="docutils literal notranslate"><span class="pre">tone</span></code> once playback has been initiated</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">When <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_NO_WAIT_FOR_COMPLETE</span></code> is specified, returns the returns the spawn subprocess from <code class="docutils literal notranslate"><span class="pre">subprocess.Popen</span></code>; <code class="docutils literal notranslate"><span class="pre">None</span></code> otherwise</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">tone(frequency, duration)</p>
+<p>Play single tone of given frequency and duration.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>frequency</strong> (<em>float</em>) – The frequency of the tone in Hz</li>
+<li><strong>duration</strong> (<em>float</em>) – The duration of the tone in milliseconds</li>
+<li><strong>play_type</strong> (<code class="docutils literal notranslate"><span class="pre">Sound.PLAY_WAIT_FOR_COMPLETE</span></code> or <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_NO_WAIT_FOR_COMPLETE</span></code>) – The behavior of <code class="docutils literal notranslate"><span class="pre">tone</span></code> once playback has been initiated</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">When <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_NO_WAIT_FOR_COMPLETE</span></code> is specified, returns the returns the spawn subprocess from <code class="docutils literal notranslate"><span class="pre">subprocess.Popen</span></code>; <code class="docutils literal notranslate"><span class="pre">None</span></code> otherwise</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sound.Sound.play_tone">
+<code class="descname">play_tone</code><span class="sig-paren">(</span><em>frequency</em>, <em>duration</em>, <em>delay=0.0</em>, <em>volume=100</em>, <em>play_type=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sound.Sound.play_tone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Play a single tone, specified by its frequency, duration, volume and final delay.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>frequency</strong> (<em>int</em>) – the tone frequency, in Hertz</li>
+<li><strong>duration</strong> (<em>float</em>) – Tone duration, in seconds</li>
+<li><strong>delay</strong> (<em>float</em>) – Delay after tone, in seconds (can be useful when chaining calls to <code class="docutils literal notranslate"><span class="pre">play_tone</span></code>)</li>
+<li><strong>volume</strong> (<em>int</em>) – The play volume, in percent of maximum volume</li>
+<li><strong>play_type</strong> (<code class="docutils literal notranslate"><span class="pre">Sound.PLAY_WAIT_FOR_COMPLETE</span></code>, <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_NO_WAIT_FOR_COMPLETE</span></code> or <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_LOOP</span></code>) – The behavior of <code class="docutils literal notranslate"><span class="pre">play_tone</span></code> once playback has been initiated</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">When <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_NO_WAIT_FOR_COMPLETE</span></code> is specified, returns the PID of the underlying beep command; <code class="docutils literal notranslate"><span class="pre">None</span></code> otherwise</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><strong>ValueError</strong> – if invalid parameter</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sound.Sound.play_note">
+<code class="descname">play_note</code><span class="sig-paren">(</span><em>note</em>, <em>duration</em>, <em>volume=100</em>, <em>play_type=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sound.Sound.play_note" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plays a note, given by its name as defined in <code class="docutils literal notranslate"><span class="pre">_NOTE_FREQUENCIES</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>note</strong> (<em>string</em>) – The note symbol with its octave number</li>
+<li><strong>duration</strong> (<em>float</em>) – Tone duration, in seconds</li>
+<li><strong>volume</strong> (<em>int</em>) – The play volume, in percent of maximum volume</li>
+<li><strong>play_type</strong> (<code class="docutils literal notranslate"><span class="pre">Sound.PLAY_WAIT_FOR_COMPLETE</span></code>, <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_NO_WAIT_FOR_COMPLETE</span></code> or <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_LOOP</span></code>) – The behavior of <code class="docutils literal notranslate"><span class="pre">play_note</span></code> once playback has been initiated</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">When <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_NO_WAIT_FOR_COMPLETE</span></code> is specified, returns the PID of the underlying beep command; <code class="docutils literal notranslate"><span class="pre">None</span></code> otherwise</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><strong>ValueError</strong> – is invalid parameter (note, duration,…)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sound.Sound.play">
+<code class="descname">play</code><span class="sig-paren">(</span><em>wav_file</em>, <em>play_type=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sound.Sound.play" title="Permalink to this definition">¶</a></dt>
+<dd><p>Play a sound file (wav format).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wav_file</strong> (<em>string</em>) – The sound file path</li>
+<li><strong>play_type</strong> (<code class="docutils literal notranslate"><span class="pre">Sound.PLAY_WAIT_FOR_COMPLETE</span></code>, <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_NO_WAIT_FOR_COMPLETE</span></code> or <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_LOOP</span></code>) – The behavior of <code class="docutils literal notranslate"><span class="pre">play</span></code> once playback has been initiated</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">When <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_NO_WAIT_FOR_COMPLETE</span></code> is specified, returns the spawn subprocess from <code class="docutils literal notranslate"><span class="pre">subprocess.Popen</span></code>; <code class="docutils literal notranslate"><span class="pre">None</span></code> otherwise</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sound.Sound.play_file">
+<code class="descname">play_file</code><span class="sig-paren">(</span><em>wav_file</em>, <em>volume=100</em>, <em>play_type=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sound.Sound.play_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Play a sound file (wav format) at a given volume.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wav_file</strong> (<em>string</em>) – The sound file path</li>
+<li><strong>volume</strong> (<em>int</em>) – The play volume, in percent of maximum volume</li>
+<li><strong>play_type</strong> (<code class="docutils literal notranslate"><span class="pre">Sound.PLAY_WAIT_FOR_COMPLETE</span></code>, <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_NO_WAIT_FOR_COMPLETE</span></code> or <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_LOOP</span></code>) – The behavior of <code class="docutils literal notranslate"><span class="pre">play_file</span></code> once playback has been initiated</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">When <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_NO_WAIT_FOR_COMPLETE</span></code> is specified, returns the spawn subprocess from <code class="docutils literal notranslate"><span class="pre">subprocess.Popen</span></code>; <code class="docutils literal notranslate"><span class="pre">None</span></code> otherwise</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sound.Sound.speak">
+<code class="descname">speak</code><span class="sig-paren">(</span><em>text</em>, <em>espeak_opts='-a 200 -s 130'</em>, <em>volume=100</em>, <em>play_type=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sound.Sound.speak" title="Permalink to this definition">¶</a></dt>
+<dd><p>Speak the given text aloud.</p>
+<p>Uses the <code class="docutils literal notranslate"><span class="pre">espeak</span></code> external command.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>text</strong> (<em>string</em>) – The text to speak</li>
+<li><strong>espeak_opts</strong> (<em>string</em>) – <code class="docutils literal notranslate"><span class="pre">espeak</span></code> command options (advanced usage)</li>
+<li><strong>volume</strong> (<em>int</em>) – The play volume, in percent of maximum volume</li>
+<li><strong>play_type</strong> (<code class="docutils literal notranslate"><span class="pre">Sound.PLAY_WAIT_FOR_COMPLETE</span></code>, <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_NO_WAIT_FOR_COMPLETE</span></code> or <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_LOOP</span></code>) – The behavior of <code class="docutils literal notranslate"><span class="pre">speak</span></code> once playback has been initiated</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">When <code class="docutils literal notranslate"><span class="pre">Sound.PLAY_NO_WAIT_FOR_COMPLETE</span></code> is specified, returns the spawn subprocess from <code class="docutils literal notranslate"><span class="pre">subprocess.Popen</span></code>; <code class="docutils literal notranslate"><span class="pre">None</span></code> otherwise</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sound.Sound.set_volume">
+<code class="descname">set_volume</code><span class="sig-paren">(</span><em>pct</em>, <em>channel=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sound.Sound.set_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the sound volume to the given percentage [0-100] by calling
+<code class="docutils literal notranslate"><span class="pre">amixer</span> <span class="pre">-q</span> <span class="pre">set</span> <span class="pre">&lt;channel&gt;</span> <span class="pre">&lt;pct&gt;%</span></code>.
+If the channel is not specified, it tries to determine the default one
+by running <code class="docutils literal notranslate"><span class="pre">amixer</span> <span class="pre">scontrols</span></code>. If that fails as well, it uses the
+<code class="docutils literal notranslate"><span class="pre">Playback</span></code> channel, as that is the only channel on the EV3.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sound.Sound.get_volume">
+<code class="descname">get_volume</code><span class="sig-paren">(</span><em>channel=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sound.Sound.get_volume" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the current sound volume by parsing the output of
+<code class="docutils literal notranslate"><span class="pre">amixer</span> <span class="pre">get</span> <span class="pre">&lt;channel&gt;</span></code>.
+If the channel is not specified, it tries to determine the default one
+by running <code class="docutils literal notranslate"><span class="pre">amixer</span> <span class="pre">scontrols</span></code>. If that fails as well, it uses the
+<code class="docutils literal notranslate"><span class="pre">Playback</span></code> channel, as that is the only channel on the EV3.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sound.Sound.play_song">
+<code class="descname">play_song</code><span class="sig-paren">(</span><em>song</em>, <em>tempo=120</em>, <em>delay=0.05</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sound.Sound.play_song" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plays a song provided as a list of tuples containing the note name and its
+value using music conventional notation instead of numerical values for frequency
+and duration.</p>
+<p>It supports symbolic notes (e.g. <code class="docutils literal notranslate"><span class="pre">A4</span></code>, <code class="docutils literal notranslate"><span class="pre">D#3</span></code>, <code class="docutils literal notranslate"><span class="pre">Gb5</span></code>) and durations (e.g. <code class="docutils literal notranslate"><span class="pre">q</span></code>, <code class="docutils literal notranslate"><span class="pre">h</span></code>).</p>
+<p>For an exhaustive list of accepted note symbols and values, have a look at the <code class="docutils literal notranslate"><span class="pre">_NOTE_FREQUENCIES</span></code>
+and <code class="docutils literal notranslate"><span class="pre">_NOTE_VALUES</span></code> private dictionaries in the source code.</p>
+<p>The value can be suffixed by modifiers:</p>
+<ul class="simple">
+<li>a <em>divider</em> introduced by a <code class="docutils literal notranslate"><span class="pre">/</span></code> to obtain triplets for instance
+(e.g. <code class="docutils literal notranslate"><span class="pre">q/3</span></code> for a triplet of eight note)</li>
+<li>a <em>multiplier</em> introduced by <code class="docutils literal notranslate"><span class="pre">*</span></code> (e.g. <code class="docutils literal notranslate"><span class="pre">*1.5</span></code> is a dotted note).</li>
+</ul>
+<p>Shortcuts exist for common modifiers:</p>
+<ul class="simple">
+<li><code class="docutils literal notranslate"><span class="pre">3</span></code> produces a triplet member note. For instance <cite>e3</cite> gives a triplet of eight notes,
+i.e. 3 eight notes in the duration of a single quarter. You must ensure that 3 triplets
+notes are defined in sequence to match the count, otherwise the result will not be the
+expected one.</li>
+<li><code class="docutils literal notranslate"><span class="pre">.</span></code> produces a dotted note, i.e. which duration is one and a half the base one. Double dots
+are not currently supported.</li>
+</ul>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="c1"># A long time ago in a galaxy far,</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># far away...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">Sound</span><span class="o">.</span><span class="n">play_song</span><span class="p">((</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">(</span><span class="s1">&#39;D4&#39;</span><span class="p">,</span> <span class="s1">&#39;e3&#39;</span><span class="p">),</span>      <span class="c1"># intro anacrouse</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">(</span><span class="s1">&#39;D4&#39;</span><span class="p">,</span> <span class="s1">&#39;e3&#39;</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">(</span><span class="s1">&#39;D4&#39;</span><span class="p">,</span> <span class="s1">&#39;e3&#39;</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">(</span><span class="s1">&#39;G4&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">),</span>       <span class="c1"># meas 1</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">(</span><span class="s1">&#39;D5&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">(</span><span class="s1">&#39;C5&#39;</span><span class="p">,</span> <span class="s1">&#39;e3&#39;</span><span class="p">),</span>      <span class="c1"># meas 2</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">,</span> <span class="s1">&#39;e3&#39;</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">(</span><span class="s1">&#39;A4&#39;</span><span class="p">,</span> <span class="s1">&#39;e3&#39;</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">(</span><span class="s1">&#39;G5&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">(</span><span class="s1">&#39;D5&#39;</span><span class="p">,</span> <span class="s1">&#39;q&#39;</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">(</span><span class="s1">&#39;C5&#39;</span><span class="p">,</span> <span class="s1">&#39;e3&#39;</span><span class="p">),</span>      <span class="c1"># meas 3</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">,</span> <span class="s1">&#39;e3&#39;</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">(</span><span class="s1">&#39;A4&#39;</span><span class="p">,</span> <span class="s1">&#39;e3&#39;</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">(</span><span class="s1">&#39;G5&#39;</span><span class="p">,</span> <span class="s1">&#39;h&#39;</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">(</span><span class="s1">&#39;D5&#39;</span><span class="p">,</span> <span class="s1">&#39;q&#39;</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">(</span><span class="s1">&#39;C5&#39;</span><span class="p">,</span> <span class="s1">&#39;e3&#39;</span><span class="p">),</span>      <span class="c1"># meas 4</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">(</span><span class="s1">&#39;B4&#39;</span><span class="p">,</span> <span class="s1">&#39;e3&#39;</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">(</span><span class="s1">&#39;C5&#39;</span><span class="p">,</span> <span class="s1">&#39;e3&#39;</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">(</span><span class="s1">&#39;A4&#39;</span><span class="p">,</span> <span class="s1">&#39;h.&#39;</span><span class="p">),</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">Only 4/4 signature songs are supported with respect to note durations.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>string</strong><strong>)</strong><strong>] </strong><strong>song</strong> (<em>iterable</em><em>[</em><em>tuple</em><em>(</em><em>string</em><em>,</em>) – the song</li>
+<li><strong>tempo</strong> (<em>int</em>) – the song tempo, given in quarters per minute</li>
+<li><strong>delay</strong> (<em>float</em>) – delay between notes (in seconds)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">the spawn subprocess from <code class="docutils literal notranslate"><span class="pre">subprocess.Popen</span></code></p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Raises:</th><td class="field-body"><p class="first last"><strong>ValueError</strong> – if invalid note in song or invalid play parameters</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="display">
+<h2>Display<a class="headerlink" href="#display" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="ev3dev2.display.Display">
+<em class="property">class </em><code class="descclassname">ev3dev2.display.</code><code class="descname">Display</code><span class="sig-paren">(</span><em>desc='Display'</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.display.Display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ev3dev2.display.FbMem</span></code></p>
+<p>A convenience wrapper for the FbMem class.
+Provides drawing functions from the python imaging library (PIL).</p>
+<dl class="attribute">
+<dt id="ev3dev2.display.Display.xres">
+<code class="descname">xres</code><a class="headerlink" href="#ev3dev2.display.Display.xres" title="Permalink to this definition">¶</a></dt>
+<dd><p>Horizontal screen resolution</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.display.Display.yres">
+<code class="descname">yres</code><a class="headerlink" href="#ev3dev2.display.Display.yres" title="Permalink to this definition">¶</a></dt>
+<dd><p>Vertical screen resolution</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.display.Display.shape">
+<code class="descname">shape</code><a class="headerlink" href="#ev3dev2.display.Display.shape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dimensions of the screen.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.display.Display.draw">
+<code class="descname">draw</code><a class="headerlink" href="#ev3dev2.display.Display.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a handle to PIL.ImageDraw.Draw class associated with the screen.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">screen</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rectangle</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">60</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span> <span class="n">fill</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.display.Display.image">
+<code class="descname">image</code><a class="headerlink" href="#ev3dev2.display.Display.image" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a handle to PIL.Image class that is backing the screen. This can
+be accessed for blitting images to the screen.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">screen</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">paste</span><span class="p">(</span><span class="n">picture</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.display.Display.clear">
+<code class="descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.display.Display.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears the screen</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.display.Display.update">
+<code class="descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.display.Display.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies pending changes to the screen.
+Nothing will be drawn on the screen until this function is called.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.display.Display.line">
+<code class="descname">line</code><span class="sig-paren">(</span><em>clear_screen=True</em>, <em>x1=10</em>, <em>y1=10</em>, <em>x2=50</em>, <em>y2=50</em>, <em>line_color='black'</em>, <em>width=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.display.Display.line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a line from (x1, y1) to (x2, y2)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.display.Display.circle">
+<code class="descname">circle</code><span class="sig-paren">(</span><em>clear_screen=True</em>, <em>x=50</em>, <em>y=50</em>, <em>radius=40</em>, <em>fill_color='black'</em>, <em>outline_color='black'</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.display.Display.circle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a circle of ‘radius’ centered at (x, y)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.display.Display.rectangle">
+<code class="descname">rectangle</code><span class="sig-paren">(</span><em>clear_screen=True</em>, <em>x=10</em>, <em>y=10</em>, <em>width=80</em>, <em>height=40</em>, <em>fill_color='black'</em>, <em>outline_color='black'</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.display.Display.rectangle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a rectangle ‘width x height’ where the top left corner is at (x, y)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.display.Display.point">
+<code class="descname">point</code><span class="sig-paren">(</span><em>clear_screen=True</em>, <em>x=10</em>, <em>y=10</em>, <em>point_color='black'</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.display.Display.point" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a single pixel at (x, y)</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.display.Display.text_pixels">
+<code class="descname">text_pixels</code><span class="sig-paren">(</span><em>text</em>, <em>clear_screen=True</em>, <em>x=0</em>, <em>y=0</em>, <em>text_color='black'</em>, <em>font=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.display.Display.text_pixels" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display <cite>text</cite> starting at pixel (x, y).</p>
+<p>The EV3 display is 178x128 pixels
+- (0, 0) would be the top left corner of the display
+- (89, 64) would be right in the middle of the display</p>
+<p>‘text_color’ : PIL says it supports “common HTML color names”. There
+are 140 HTML color names listed here that are supported by all modern
+browsers. This is probably a good list to start with.
+<a class="reference external" href="https://www.w3schools.com/colors/colors_names.asp">https://www.w3schools.com/colors/colors_names.asp</a></p>
+<dl class="docutils">
+<dt>‘font’ <span class="classifier-delimiter">:</span> <span class="classifier">can be any font displayed here</span></dt>
+<dd><a class="reference external" href="http://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/ev3dev-stretch/other.html#bitmap-fonts">http://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/ev3dev-stretch/other.html#bitmap-fonts</a></dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.display.Display.text_grid">
+<code class="descname">text_grid</code><span class="sig-paren">(</span><em>text</em>, <em>clear_screen=True</em>, <em>x=0</em>, <em>y=0</em>, <em>text_color='black'</em>, <em>font=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.display.Display.text_grid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display ‘text’ starting at grid (x, y)</p>
+<p>The EV3 display can be broken down in a grid that is 22 columns wide
+and 12 rows tall. Each column is 8 pixels wide and each row is 10
+pixels tall.</p>
+<p>‘text_color’ : PIL says it supports “common HTML color names”. There
+are 140 HTML color names listed here that are supported by all modern
+browsers. This is probably a good list to start with.
+<a class="reference external" href="https://www.w3schools.com/colors/colors_names.asp">https://www.w3schools.com/colors/colors_names.asp</a></p>
+<dl class="docutils">
+<dt>‘font’ <span class="classifier-delimiter">:</span> <span class="classifier">can be any font displayed here</span></dt>
+<dd><a class="reference external" href="http://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/ev3dev-stretch/other.html#bitmap-fonts">http://ev3dev-lang.readthedocs.io/projects/python-ev3dev/en/ev3dev-stretch/other.html#bitmap-fonts</a></dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<div class="section" id="bitmap-fonts">
+<h3>Bitmap fonts<a class="headerlink" href="#bitmap-fonts" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference internal" href="#ev3dev2.display.Display" title="ev3dev2.display.Display"><code class="xref py py-class docutils literal notranslate"><span class="pre">ev3dev2.display.Display</span></code></a> class allows to write text on the LCD using python
+imaging library (PIL) interface (see description of the <code class="docutils literal notranslate"><span class="pre">text()</span></code> method
+<a class="reference external" href="http://pillow.readthedocs.io/en/3.1.x/reference/ImageDraw.html#PIL.ImageDraw.PIL.ImageDraw.Draw.text">here</a>).
+The <code class="docutils literal notranslate"><span class="pre">ev3dev2.fonts</span></code> module contains bitmap fonts in PIL format that should
+look good on a tiny EV3 screen:</p>
+<div class="highlight-py notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">ev3dev2.fonts</span> <span class="kn">as</span> <span class="nn">fonts</span>
+<span class="n">display</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">text</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">),</span> <span class="s1">&#39;Hello World!&#39;</span><span class="p">,</span> <span class="n">font</span><span class="o">=</span><span class="n">fonts</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;luBS14&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<dl class="function">
+<dt id="ev3dev2.fonts.available">
+<code class="descclassname">ev3dev2.fonts.</code><code class="descname">available</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.fonts.available" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns list of available font names.</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="ev3dev2.fonts.load">
+<code class="descclassname">ev3dev2.fonts.</code><code class="descname">load</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.fonts.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads the font specified by name and returns it as an instance of
+<a class="reference external" href="http://pillow.readthedocs.io/en/latest/reference/ImageFont.html">PIL.ImageFont</a>
+class.</p>
+</dd></dl>
+
+<p>The following image lists all available fonts. The grid lines correspond
+to EV3 screen size:</p>
+<img alt="_images/fonts.png" src="_images/fonts.png" />
+</div>
+</div>
+<div class="section" id="lego-port">
+<h2>Lego Port<a class="headerlink" href="#lego-port" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="ev3dev2.port.LegoPort">
+<em class="property">class </em><code class="descclassname">ev3dev2.port.</code><code class="descname">LegoPort</code><span class="sig-paren">(</span><em>address=None</em>, <em>name_pattern='*'</em>, <em>name_exact=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.port.LegoPort" title="Permalink to this definition">¶</a></dt>
+<dd><p>The <cite>lego-port</cite> class provides an interface for working with input and
+output ports that are compatible with LEGO MINDSTORMS RCX/NXT/EV3, LEGO
+WeDo and LEGO Power Functions sensors and motors. Supported devices include
+the LEGO MINDSTORMS EV3 Intelligent Brick, the LEGO WeDo USB hub and
+various sensor multiplexers from 3rd party manufacturers.</p>
+<p>Some types of ports may have multiple modes of operation. For example, the
+input ports on the EV3 brick can communicate with sensors using UART, I2C
+or analog validate signals - but not all at the same time. Therefore there
+are multiple modes available to connect to the different types of sensors.</p>
+<p>In most cases, ports are able to automatically detect what type of sensor
+or motor is connected. In some cases though, this must be manually specified
+using the <cite>mode</cite> and <cite>set_device</cite> attributes. The <cite>mode</cite> attribute affects
+how the port communicates with the connected device. For example the input
+ports on the EV3 brick can communicate using UART, I2C or analog voltages,
+but not all at the same time, so the mode must be set to the one that is
+appropriate for the connected sensor. The <cite>set_device</cite> attribute is used to
+specify the exact type of sensor that is connected. Note: the mode must be
+correctly set before setting the sensor type.</p>
+<p>Ports can be found at <cite>/sys/class/lego-port/port&lt;N&gt;</cite> where <cite>&lt;N&gt;</cite> is
+incremented each time a new port is registered. Note: The number is not
+related to the actual port at all - use the <cite>address</cite> attribute to find
+a specific port.</p>
+<dl class="attribute">
+<dt id="ev3dev2.port.LegoPort.address">
+<code class="descname">address</code><a class="headerlink" href="#ev3dev2.port.LegoPort.address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the port. See individual driver documentation for
+the name that will be returned.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.port.LegoPort.driver_name">
+<code class="descname">driver_name</code><a class="headerlink" href="#ev3dev2.port.LegoPort.driver_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the driver that loaded this device. You can find the
+complete list of drivers in the [list of port drivers].</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.port.LegoPort.modes">
+<code class="descname">modes</code><a class="headerlink" href="#ev3dev2.port.LegoPort.modes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of the available modes of the port.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.port.LegoPort.mode">
+<code class="descname">mode</code><a class="headerlink" href="#ev3dev2.port.LegoPort.mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reading returns the currently selected mode. Writing sets the mode.
+Generally speaking when the mode changes any sensor or motor devices
+associated with the port will be removed new ones loaded, however this
+this will depend on the individual driver implementing this class.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.port.LegoPort.set_device">
+<code class="descname">set_device</code><a class="headerlink" href="#ev3dev2.port.LegoPort.set_device" title="Permalink to this definition">¶</a></dt>
+<dd><p>For modes that support it, writing the name of a driver will cause a new
+device to be registered for that driver and attached to this port. For
+example, since NXT/Analog sensors cannot be auto-detected, you must use
+this attribute to load the correct driver. Returns -EOPNOTSUPP if setting a
+device is not supported.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.port.LegoPort.status">
+<code class="descname">status</code><a class="headerlink" href="#ev3dev2.port.LegoPort.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>In most cases, reading status will return the same value as <cite>mode</cite>. In
+cases where there is an <cite>auto</cite> mode additional values may be returned,
+such as <cite>no-device</cite> or <cite>error</cite>. See individual port driver documentation
+for the full list of possible values.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Ralph Hempel et al.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

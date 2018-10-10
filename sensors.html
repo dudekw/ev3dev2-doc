@@ -1,0 +1,887 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Sensor classes &#8212; python-ev3dev 1.1 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Other classes" href="other.html" />
+    <link rel="prev" title="Motor classes" href="motors.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          python-ev3dev</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.1</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="https://github.com/ev3dev/ev3dev-lang-python">GitHub</a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="upgrading-to-stretch.html">Upgrading from ev3dev-jessie (library v1) to ev3dev-stretch (library v2)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrading-to-stretch.html#once-you-ve-adapted-to-breaking-changes-check-out-the-cool-new-features">Once you’ve adapted to breaking changes, check out the cool new features!</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="spec.html">API reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rpyc.html">Working with ev3dev remotely using RPyC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Frequently-Asked Questions</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a role="button"
+     id="dLabelLocalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="#">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"
+      role="menu"
+      aria-labelledby="dLabelLocalToc"><ul>
+<li><a class="reference internal" href="#">Sensor classes</a><ul>
+<li><a class="reference internal" href="#dedicated-sensor-classes">Dedicated sensor classes</a><ul>
+<li><a class="reference internal" href="#touch-sensor">Touch Sensor</a></li>
+<li><a class="reference internal" href="#color-sensor">Color Sensor</a></li>
+<li><a class="reference internal" href="#ultrasonic-sensor">Ultrasonic Sensor</a></li>
+<li><a class="reference internal" href="#gyro-sensor">Gyro Sensor</a></li>
+<li><a class="reference internal" href="#infrared-sensor">Infrared Sensor</a></li>
+<li><a class="reference internal" href="#sound-sensor">Sound Sensor</a></li>
+<li><a class="reference internal" href="#light-sensor">Light Sensor</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#base-sensor">Base “Sensor”</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="motors.html" title="Previous Chapter: Motor classes"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Motor classes</span>
+    </a>
+  </li>
+  <li>
+    <a href="other.html" title="Next Chapter: Other classes"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Other classes &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/sensors.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 content">
+      
+  <div class="section" id="sensor-classes">
+<h1>Sensor classes<a class="headerlink" href="#sensor-classes" title="Permalink to this headline">¶</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><a class="reference internal" href="#dedicated-sensor-classes" id="id1">Dedicated sensor classes</a><ul>
+<li><a class="reference internal" href="#touch-sensor" id="id2">Touch Sensor</a></li>
+<li><a class="reference internal" href="#color-sensor" id="id3">Color Sensor</a></li>
+<li><a class="reference internal" href="#ultrasonic-sensor" id="id4">Ultrasonic Sensor</a></li>
+<li><a class="reference internal" href="#gyro-sensor" id="id5">Gyro Sensor</a></li>
+<li><a class="reference internal" href="#infrared-sensor" id="id6">Infrared Sensor</a></li>
+<li><a class="reference internal" href="#sound-sensor" id="id7">Sound Sensor</a></li>
+<li><a class="reference internal" href="#light-sensor" id="id8">Light Sensor</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#base-sensor" id="id9">Base “Sensor”</a></li>
+</ul>
+</div>
+<div class="section" id="dedicated-sensor-classes">
+<h2><a class="toc-backref" href="#id1">Dedicated sensor classes</a><a class="headerlink" href="#dedicated-sensor-classes" title="Permalink to this headline">¶</a></h2>
+<p>These classes derive from <a class="reference internal" href="#ev3dev2.sensor.Sensor" title="ev3dev2.sensor.Sensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ev3dev2.sensor.Sensor</span></code></a> and provide helper functions
+specific to the corresponding sensor type. Each provides sensible property
+accessors for the main functionality of the sensor.</p>
+<div class="section" id="touch-sensor">
+<h3><a class="toc-backref" href="#id2">Touch Sensor</a><a class="headerlink" href="#touch-sensor" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="ev3dev2.sensor.lego.TouchSensor">
+<em class="property">class </em><code class="descclassname">ev3dev2.sensor.lego.</code><code class="descname">TouchSensor</code><span class="sig-paren">(</span><em>address=None</em>, <em>name_pattern='sensor*'</em>, <em>name_exact=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.lego.TouchSensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ev3dev2.sensor.Sensor" title="ev3dev2.sensor.Sensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ev3dev2.sensor.Sensor</span></code></a></p>
+<p>Touch Sensor</p>
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.TouchSensor.MODE_TOUCH">
+<code class="descname">MODE_TOUCH</code><em class="property"> = 'TOUCH'</em><a class="headerlink" href="#ev3dev2.sensor.lego.TouchSensor.MODE_TOUCH" title="Permalink to this definition">¶</a></dt>
+<dd><p>Button state</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.TouchSensor.is_pressed">
+<code class="descname">is_pressed</code><a class="headerlink" href="#ev3dev2.sensor.lego.TouchSensor.is_pressed" title="Permalink to this definition">¶</a></dt>
+<dd><p>A boolean indicating whether the current touch sensor is being
+pressed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sensor.lego.TouchSensor.wait_for_bump">
+<code class="descname">wait_for_bump</code><span class="sig-paren">(</span><em>timeout_ms=None</em>, <em>sleep_ms=10</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.lego.TouchSensor.wait_for_bump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait for the touch sensor to be pressed down and then released.
+Both actions must happen within timeout_ms.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="color-sensor">
+<h3><a class="toc-backref" href="#id3">Color Sensor</a><a class="headerlink" href="#color-sensor" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="ev3dev2.sensor.lego.ColorSensor">
+<em class="property">class </em><code class="descclassname">ev3dev2.sensor.lego.</code><code class="descname">ColorSensor</code><span class="sig-paren">(</span><em>address=None</em>, <em>name_pattern='sensor*'</em>, <em>name_exact=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ev3dev2.sensor.Sensor" title="ev3dev2.sensor.Sensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ev3dev2.sensor.Sensor</span></code></a></p>
+<p>LEGO EV3 color sensor.</p>
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.MODE_COL_REFLECT">
+<code class="descname">MODE_COL_REFLECT</code><em class="property"> = 'COL-REFLECT'</em><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.MODE_COL_REFLECT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reflected light. Red LED on.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.MODE_COL_AMBIENT">
+<code class="descname">MODE_COL_AMBIENT</code><em class="property"> = 'COL-AMBIENT'</em><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.MODE_COL_AMBIENT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ambient light. Blue LEDs on.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.MODE_COL_COLOR">
+<code class="descname">MODE_COL_COLOR</code><em class="property"> = 'COL-COLOR'</em><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.MODE_COL_COLOR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Color. All LEDs rapidly cycling, appears white.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.MODE_REF_RAW">
+<code class="descname">MODE_REF_RAW</code><em class="property"> = 'REF-RAW'</em><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.MODE_REF_RAW" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raw reflected. Red LED on</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.MODE_RGB_RAW">
+<code class="descname">MODE_RGB_RAW</code><em class="property"> = 'RGB-RAW'</em><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.MODE_RGB_RAW" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raw Color Components. All LEDs rapidly cycling, appears white.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.COLOR_NOCOLOR">
+<code class="descname">COLOR_NOCOLOR</code><em class="property"> = 0</em><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.COLOR_NOCOLOR" title="Permalink to this definition">¶</a></dt>
+<dd><p>No color.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.COLOR_BLACK">
+<code class="descname">COLOR_BLACK</code><em class="property"> = 1</em><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.COLOR_BLACK" title="Permalink to this definition">¶</a></dt>
+<dd><p>Black color.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.COLOR_BLUE">
+<code class="descname">COLOR_BLUE</code><em class="property"> = 2</em><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.COLOR_BLUE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Blue color.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.COLOR_GREEN">
+<code class="descname">COLOR_GREEN</code><em class="property"> = 3</em><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.COLOR_GREEN" title="Permalink to this definition">¶</a></dt>
+<dd><p>Green color.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.COLOR_YELLOW">
+<code class="descname">COLOR_YELLOW</code><em class="property"> = 4</em><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.COLOR_YELLOW" title="Permalink to this definition">¶</a></dt>
+<dd><p>Yellow color.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.COLOR_RED">
+<code class="descname">COLOR_RED</code><em class="property"> = 5</em><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.COLOR_RED" title="Permalink to this definition">¶</a></dt>
+<dd><p>Red color.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.COLOR_WHITE">
+<code class="descname">COLOR_WHITE</code><em class="property"> = 6</em><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.COLOR_WHITE" title="Permalink to this definition">¶</a></dt>
+<dd><p>White color.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.COLOR_BROWN">
+<code class="descname">COLOR_BROWN</code><em class="property"> = 7</em><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.COLOR_BROWN" title="Permalink to this definition">¶</a></dt>
+<dd><p>Brown color.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.reflected_light_intensity">
+<code class="descname">reflected_light_intensity</code><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.reflected_light_intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reflected light intensity as a percentage. Light on sensor is red.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.ambient_light_intensity">
+<code class="descname">ambient_light_intensity</code><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.ambient_light_intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ambient light intensity. Light on sensor is dimly lit blue.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.color">
+<code class="descname">color</code><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.color" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Color detected by the sensor, categorized by overall value.</dt>
+<dd><ul class="first last simple">
+<li>0: No color</li>
+<li>1: Black</li>
+<li>2: Blue</li>
+<li>3: Green</li>
+<li>4: Yellow</li>
+<li>5: Red</li>
+<li>6: White</li>
+<li>7: Brown</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.color_name">
+<code class="descname">color_name</code><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.color_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns NoColor, Black, Blue, etc</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.raw">
+<code class="descname">raw</code><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.raw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Red, green, and blue components of the detected color, officially in the
+range 0-1020 but the values returned will never be that high. We do not
+yet know why the values returned are low, but pointing the color sensor
+at a well lit sheet of white paper will return values in the 250-400 range.</p>
+<p>If this is an issue, check out the rgb() and calibrate_white() methods.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sensor.lego.ColorSensor.calibrate_white">
+<code class="descname">calibrate_white</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.calibrate_white" title="Permalink to this definition">¶</a></dt>
+<dd><p>The RGB raw values are on a scale of 0-1020 but you never see a value
+anywhere close to 1020.  This function is designed to be called when
+the sensor is placed over a white object in order to figure out what
+are the maximum RGB values the robot can expect to see.  We will use
+these maximum values to scale future raw values to a 0-255 range in
+rgb().</p>
+<p>If you never call this function red_max, green_max, and blue_max will
+use a default value of 300.  This default was selected by measuring
+the RGB values of a white sheet of paper in a well lit room.</p>
+<p>Note that there are several variables that influence the maximum RGB
+values detected by the color sensor
+- the distance of the color sensor to the white object
+- the amount of light in the room
+- shadows that the robot casts on the sensor</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.rgb">
+<code class="descname">rgb</code><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Same as raw() but RGB values are scaled to 0-255</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.lab">
+<code class="descname">lab</code><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.lab" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return colors in Lab color space</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.hsv">
+<code class="descname">hsv</code><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.hsv" title="Permalink to this definition">¶</a></dt>
+<dd><p>HSV: Hue, Saturation, Value
+H: position in the spectrum
+S: color saturation (“purity”)
+V: color brightness</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.hls">
+<code class="descname">hls</code><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.hls" title="Permalink to this definition">¶</a></dt>
+<dd><p>HLS: Hue, Luminance, Saturation
+H: position in the spectrum
+L: color lightness
+S: color saturation</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.red">
+<code class="descname">red</code><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.red" title="Permalink to this definition">¶</a></dt>
+<dd><p>Red component of the detected color, in the range 0-1020.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.green">
+<code class="descname">green</code><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.green" title="Permalink to this definition">¶</a></dt>
+<dd><p>Green component of the detected color, in the range 0-1020.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.ColorSensor.blue">
+<code class="descname">blue</code><a class="headerlink" href="#ev3dev2.sensor.lego.ColorSensor.blue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Blue component of the detected color, in the range 0-1020.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="ultrasonic-sensor">
+<h3><a class="toc-backref" href="#id4">Ultrasonic Sensor</a><a class="headerlink" href="#ultrasonic-sensor" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="ev3dev2.sensor.lego.UltrasonicSensor">
+<em class="property">class </em><code class="descclassname">ev3dev2.sensor.lego.</code><code class="descname">UltrasonicSensor</code><span class="sig-paren">(</span><em>address=None</em>, <em>name_pattern='sensor*'</em>, <em>name_exact=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.lego.UltrasonicSensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ev3dev2.sensor.Sensor" title="ev3dev2.sensor.Sensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ev3dev2.sensor.Sensor</span></code></a></p>
+<p>LEGO EV3 ultrasonic sensor.</p>
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.UltrasonicSensor.MODE_US_DIST_CM">
+<code class="descname">MODE_US_DIST_CM</code><em class="property"> = 'US-DIST-CM'</em><a class="headerlink" href="#ev3dev2.sensor.lego.UltrasonicSensor.MODE_US_DIST_CM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Continuous measurement in centimeters.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.UltrasonicSensor.MODE_US_DIST_IN">
+<code class="descname">MODE_US_DIST_IN</code><em class="property"> = 'US-DIST-IN'</em><a class="headerlink" href="#ev3dev2.sensor.lego.UltrasonicSensor.MODE_US_DIST_IN" title="Permalink to this definition">¶</a></dt>
+<dd><p>Continuous measurement in inches.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.UltrasonicSensor.MODE_US_LISTEN">
+<code class="descname">MODE_US_LISTEN</code><em class="property"> = 'US-LISTEN'</em><a class="headerlink" href="#ev3dev2.sensor.lego.UltrasonicSensor.MODE_US_LISTEN" title="Permalink to this definition">¶</a></dt>
+<dd><p>Listen.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.UltrasonicSensor.MODE_US_SI_CM">
+<code class="descname">MODE_US_SI_CM</code><em class="property"> = 'US-SI-CM'</em><a class="headerlink" href="#ev3dev2.sensor.lego.UltrasonicSensor.MODE_US_SI_CM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Single measurement in centimeters.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.UltrasonicSensor.MODE_US_SI_IN">
+<code class="descname">MODE_US_SI_IN</code><em class="property"> = 'US-SI-IN'</em><a class="headerlink" href="#ev3dev2.sensor.lego.UltrasonicSensor.MODE_US_SI_IN" title="Permalink to this definition">¶</a></dt>
+<dd><p>Single measurement in inches.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.UltrasonicSensor.distance_centimeters">
+<code class="descname">distance_centimeters</code><a class="headerlink" href="#ev3dev2.sensor.lego.UltrasonicSensor.distance_centimeters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Measurement of the distance detected by the sensor,
+in centimeters.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.UltrasonicSensor.distance_inches">
+<code class="descname">distance_inches</code><a class="headerlink" href="#ev3dev2.sensor.lego.UltrasonicSensor.distance_inches" title="Permalink to this definition">¶</a></dt>
+<dd><p>Measurement of the distance detected by the sensor,
+in inches.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.UltrasonicSensor.other_sensor_present">
+<code class="descname">other_sensor_present</code><a class="headerlink" href="#ev3dev2.sensor.lego.UltrasonicSensor.other_sensor_present" title="Permalink to this definition">¶</a></dt>
+<dd><p>Value indicating whether another ultrasonic sensor could
+be heard nearby.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="gyro-sensor">
+<h3><a class="toc-backref" href="#id5">Gyro Sensor</a><a class="headerlink" href="#gyro-sensor" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="ev3dev2.sensor.lego.GyroSensor">
+<em class="property">class </em><code class="descclassname">ev3dev2.sensor.lego.</code><code class="descname">GyroSensor</code><span class="sig-paren">(</span><em>address=None</em>, <em>name_pattern='sensor*'</em>, <em>name_exact=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.lego.GyroSensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ev3dev2.sensor.Sensor" title="ev3dev2.sensor.Sensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ev3dev2.sensor.Sensor</span></code></a></p>
+<p>LEGO EV3 gyro sensor.</p>
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.GyroSensor.MODE_GYRO_ANG">
+<code class="descname">MODE_GYRO_ANG</code><em class="property"> = 'GYRO-ANG'</em><a class="headerlink" href="#ev3dev2.sensor.lego.GyroSensor.MODE_GYRO_ANG" title="Permalink to this definition">¶</a></dt>
+<dd><p>Angle</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.GyroSensor.MODE_GYRO_RATE">
+<code class="descname">MODE_GYRO_RATE</code><em class="property"> = 'GYRO-RATE'</em><a class="headerlink" href="#ev3dev2.sensor.lego.GyroSensor.MODE_GYRO_RATE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotational speed</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.GyroSensor.MODE_GYRO_FAS">
+<code class="descname">MODE_GYRO_FAS</code><em class="property"> = 'GYRO-FAS'</em><a class="headerlink" href="#ev3dev2.sensor.lego.GyroSensor.MODE_GYRO_FAS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Raw sensor value</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.GyroSensor.MODE_GYRO_G_A">
+<code class="descname">MODE_GYRO_G_A</code><em class="property"> = 'GYRO-G&amp;A'</em><a class="headerlink" href="#ev3dev2.sensor.lego.GyroSensor.MODE_GYRO_G_A" title="Permalink to this definition">¶</a></dt>
+<dd><p>Angle and rotational speed</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.GyroSensor.MODE_GYRO_CAL">
+<code class="descname">MODE_GYRO_CAL</code><em class="property"> = 'GYRO-CAL'</em><a class="headerlink" href="#ev3dev2.sensor.lego.GyroSensor.MODE_GYRO_CAL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calibration ???</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.GyroSensor.angle">
+<code class="descname">angle</code><a class="headerlink" href="#ev3dev2.sensor.lego.GyroSensor.angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of degrees that the sensor has been rotated
+since it was put into this mode.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.GyroSensor.rate">
+<code class="descname">rate</code><a class="headerlink" href="#ev3dev2.sensor.lego.GyroSensor.rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>The rate at which the sensor is rotating, in degrees/second.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.GyroSensor.rate_and_angle">
+<code class="descname">rate_and_angle</code><a class="headerlink" href="#ev3dev2.sensor.lego.GyroSensor.rate_and_angle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Angle (degrees) and Rotational Speed (degrees/second).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sensor.lego.GyroSensor.wait_until_angle_changed_by">
+<code class="descname">wait_until_angle_changed_by</code><span class="sig-paren">(</span><em>delta</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.lego.GyroSensor.wait_until_angle_changed_by" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait until angle has changed by specified amount.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="infrared-sensor">
+<h3><a class="toc-backref" href="#id6">Infrared Sensor</a><a class="headerlink" href="#infrared-sensor" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="ev3dev2.sensor.lego.InfraredSensor">
+<em class="property">class </em><code class="descclassname">ev3dev2.sensor.lego.</code><code class="descname">InfraredSensor</code><span class="sig-paren">(</span><em>address=None</em>, <em>name_pattern='sensor*'</em>, <em>name_exact=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ev3dev2.sensor.Sensor" title="ev3dev2.sensor.Sensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ev3dev2.sensor.Sensor</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">ev3dev2.button.ButtonBase</span></code></p>
+<p>LEGO EV3 infrared sensor.</p>
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.InfraredSensor.MODE_IR_PROX">
+<code class="descname">MODE_IR_PROX</code><em class="property"> = 'IR-PROX'</em><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor.MODE_IR_PROX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Proximity</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.InfraredSensor.MODE_IR_SEEK">
+<code class="descname">MODE_IR_SEEK</code><em class="property"> = 'IR-SEEK'</em><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor.MODE_IR_SEEK" title="Permalink to this definition">¶</a></dt>
+<dd><p>IR Seeker</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.InfraredSensor.MODE_IR_REMOTE">
+<code class="descname">MODE_IR_REMOTE</code><em class="property"> = 'IR-REMOTE'</em><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor.MODE_IR_REMOTE" title="Permalink to this definition">¶</a></dt>
+<dd><p>IR Remote Control</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.InfraredSensor.MODE_IR_REM_A">
+<code class="descname">MODE_IR_REM_A</code><em class="property"> = 'IR-REM-A'</em><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor.MODE_IR_REM_A" title="Permalink to this definition">¶</a></dt>
+<dd><p>IR Remote Control. State of the buttons is coded in binary</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.InfraredSensor.MODE_IR_CAL">
+<code class="descname">MODE_IR_CAL</code><em class="property"> = 'IR-CAL'</em><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor.MODE_IR_CAL" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calibration ???</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.InfraredSensor.on_channel1_top_left">
+<code class="descname">on_channel1_top_left</code><em class="property"> = None</em><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor.on_channel1_top_left" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles <code class="docutils literal notranslate"><span class="pre">Red</span> <span class="pre">Up</span></code>, etc events on channel 1</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.InfraredSensor.on_channel2_top_left">
+<code class="descname">on_channel2_top_left</code><em class="property"> = None</em><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor.on_channel2_top_left" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles <code class="docutils literal notranslate"><span class="pre">Red</span> <span class="pre">Up</span></code>, etc events on channel 2</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.InfraredSensor.on_channel3_top_left">
+<code class="descname">on_channel3_top_left</code><em class="property"> = None</em><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor.on_channel3_top_left" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles <code class="docutils literal notranslate"><span class="pre">Red</span> <span class="pre">Up</span></code>, etc events on channel 3</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.InfraredSensor.on_channel4_top_left">
+<code class="descname">on_channel4_top_left</code><em class="property"> = None</em><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor.on_channel4_top_left" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handles <code class="docutils literal notranslate"><span class="pre">Red</span> <span class="pre">Up</span></code>, etc events on channel 4</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.InfraredSensor.proximity">
+<code class="descname">proximity</code><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor.proximity" title="Permalink to this definition">¶</a></dt>
+<dd><p>A measurement of the distance between the sensor and the remote,
+as a percentage. 100% is approximately 70cm/27in.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sensor.lego.InfraredSensor.heading">
+<code class="descname">heading</code><span class="sig-paren">(</span><em>channel=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor.heading" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns heading (-25, 25) to the beacon on the given channel.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sensor.lego.InfraredSensor.distance">
+<code class="descname">distance</code><span class="sig-paren">(</span><em>channel=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor.distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns distance (0, 100) to the beacon on the given channel.
+Returns None when beacon is not found.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sensor.lego.InfraredSensor.heading_and_distance">
+<code class="descname">heading_and_distance</code><span class="sig-paren">(</span><em>channel=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor.heading_and_distance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns heading and distance to the beacon on the given channel as a
+tuple.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sensor.lego.InfraredSensor.top_left">
+<code class="descname">top_left</code><span class="sig-paren">(</span><em>channel=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor.top_left" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if <cite>top_left</cite> button is pressed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sensor.lego.InfraredSensor.bottom_left">
+<code class="descname">bottom_left</code><span class="sig-paren">(</span><em>channel=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor.bottom_left" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if <cite>bottom_left</cite> button is pressed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sensor.lego.InfraredSensor.top_right">
+<code class="descname">top_right</code><span class="sig-paren">(</span><em>channel=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor.top_right" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if <cite>top_right</cite> button is pressed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sensor.lego.InfraredSensor.bottom_right">
+<code class="descname">bottom_right</code><span class="sig-paren">(</span><em>channel=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor.bottom_right" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if <cite>bottom_right</cite> button is pressed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sensor.lego.InfraredSensor.beacon">
+<code class="descname">beacon</code><span class="sig-paren">(</span><em>channel=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor.beacon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if <cite>beacon</cite> button is pressed.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sensor.lego.InfraredSensor.buttons_pressed">
+<code class="descname">buttons_pressed</code><span class="sig-paren">(</span><em>channel=1</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor.buttons_pressed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns list of currently pressed buttons.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sensor.lego.InfraredSensor.process">
+<code class="descname">process</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.lego.InfraredSensor.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check for currenly pressed buttons. If the new state differs from the
+old state, call the appropriate button event handlers.</p>
+<p>To use the on_channel1_top_left, etc handlers your program would do something like:</p>
+<dl class="docutils">
+<dt>def top_left_channel_1_action(state):</dt>
+<dd>print(“top left on channel 1: %s” % state)</dd>
+<dt>def bottom_right_channel_4_action(state):</dt>
+<dd>print(“bottom right on channel 4: %s” % state)</dd>
+</dl>
+<p>ir = InfraredSensor()
+ir.on_channel1_top_left = top_left_channel_1_action
+ir.on_channel4_bottom_right = bottom_right_channel_4_action</p>
+<dl class="docutils">
+<dt>while True:</dt>
+<dd>ir.process()
+time.sleep(0.01)</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="sound-sensor">
+<h3><a class="toc-backref" href="#id7">Sound Sensor</a><a class="headerlink" href="#sound-sensor" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="ev3dev2.sensor.lego.SoundSensor">
+<em class="property">class </em><code class="descclassname">ev3dev2.sensor.lego.</code><code class="descname">SoundSensor</code><span class="sig-paren">(</span><em>address=None</em>, <em>name_pattern='sensor*'</em>, <em>name_exact=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.lego.SoundSensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ev3dev2.sensor.Sensor" title="ev3dev2.sensor.Sensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ev3dev2.sensor.Sensor</span></code></a></p>
+<p>LEGO NXT Sound Sensor</p>
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.SoundSensor.MODE_DB">
+<code class="descname">MODE_DB</code><em class="property"> = 'DB'</em><a class="headerlink" href="#ev3dev2.sensor.lego.SoundSensor.MODE_DB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sound pressure level. Flat weighting</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.SoundSensor.MODE_DBA">
+<code class="descname">MODE_DBA</code><em class="property"> = 'DBA'</em><a class="headerlink" href="#ev3dev2.sensor.lego.SoundSensor.MODE_DBA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sound pressure level. A weighting</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.SoundSensor.sound_pressure">
+<code class="descname">sound_pressure</code><a class="headerlink" href="#ev3dev2.sensor.lego.SoundSensor.sound_pressure" title="Permalink to this definition">¶</a></dt>
+<dd><p>A measurement of the measured sound pressure level, as a
+percent. Uses a flat weighting.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.SoundSensor.sound_pressure_low">
+<code class="descname">sound_pressure_low</code><a class="headerlink" href="#ev3dev2.sensor.lego.SoundSensor.sound_pressure_low" title="Permalink to this definition">¶</a></dt>
+<dd><p>A measurement of the measured sound pressure level, as a
+percent. Uses A-weighting, which focuses on levels up to 55 dB.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="light-sensor">
+<h3><a class="toc-backref" href="#id8">Light Sensor</a><a class="headerlink" href="#light-sensor" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="ev3dev2.sensor.lego.LightSensor">
+<em class="property">class </em><code class="descclassname">ev3dev2.sensor.lego.</code><code class="descname">LightSensor</code><span class="sig-paren">(</span><em>address=None</em>, <em>name_pattern='sensor*'</em>, <em>name_exact=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.lego.LightSensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#ev3dev2.sensor.Sensor" title="ev3dev2.sensor.Sensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">ev3dev2.sensor.Sensor</span></code></a></p>
+<p>LEGO NXT Light Sensor</p>
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.LightSensor.MODE_REFLECT">
+<code class="descname">MODE_REFLECT</code><em class="property"> = 'REFLECT'</em><a class="headerlink" href="#ev3dev2.sensor.lego.LightSensor.MODE_REFLECT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reflected light. LED on</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.LightSensor.MODE_AMBIENT">
+<code class="descname">MODE_AMBIENT</code><em class="property"> = 'AMBIENT'</em><a class="headerlink" href="#ev3dev2.sensor.lego.LightSensor.MODE_AMBIENT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ambient light. LED off</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.LightSensor.reflected_light_intensity">
+<code class="descname">reflected_light_intensity</code><a class="headerlink" href="#ev3dev2.sensor.lego.LightSensor.reflected_light_intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>A measurement of the reflected light intensity, as a percentage.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.lego.LightSensor.ambient_light_intensity">
+<code class="descname">ambient_light_intensity</code><a class="headerlink" href="#ev3dev2.sensor.lego.LightSensor.ambient_light_intensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>A measurement of the ambient light intensity, as a percentage.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="base-sensor">
+<h2><a class="toc-backref" href="#id9">Base “Sensor”</a><a class="headerlink" href="#base-sensor" title="Permalink to this headline">¶</a></h2>
+<p>This is the base class all the other sensor classes are derived from. You
+generally want to use one of the other classes instead, but if your sensor
+doesn’t have a dedicated class, this is will let you interface with it as a
+generic device.</p>
+<dl class="class">
+<dt id="ev3dev2.sensor.Sensor">
+<em class="property">class </em><code class="descclassname">ev3dev2.sensor.</code><code class="descname">Sensor</code><span class="sig-paren">(</span><em>address=None</em>, <em>name_pattern='sensor*'</em>, <em>name_exact=False</em>, <em>**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.Sensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>The sensor class provides a uniform interface for using most of the
+sensors available for the EV3. The various underlying device drivers will
+create a <cite>lego-sensor</cite> device for interacting with the sensors.</p>
+<p>Sensors are primarily controlled by setting the <cite>mode</cite> and monitored by
+reading the <cite>value&lt;N&gt;</cite> attributes. Values can be converted to floating point
+if needed by <cite>value&lt;N&gt;</cite> / 10.0 ^ <cite>decimals</cite>.</p>
+<p>Since the name of the <cite>sensor&lt;N&gt;</cite> device node does not correspond to the port
+that a sensor is plugged in to, you must look at the <cite>address</cite> attribute if
+you need to know which port a sensor is plugged in to. However, if you don’t
+have more than one sensor of each type, you can just look for a matching
+<cite>driver_name</cite>. Then it will not matter which port a sensor is plugged in to - your
+program will still work.</p>
+<dl class="attribute">
+<dt id="ev3dev2.sensor.Sensor.address">
+<code class="descname">address</code><a class="headerlink" href="#ev3dev2.sensor.Sensor.address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the port that the sensor is connected to, e.g. <cite>ev3:in1</cite>.
+I2C sensors also include the I2C address (decimal), e.g. <cite>ev3:in1:i2c8</cite>.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.Sensor.command">
+<code class="descname">command</code><a class="headerlink" href="#ev3dev2.sensor.Sensor.command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a command to the sensor.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.Sensor.commands">
+<code class="descname">commands</code><a class="headerlink" href="#ev3dev2.sensor.Sensor.commands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of the valid commands for the sensor.
+Returns -EOPNOTSUPP if no commands are supported.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.Sensor.decimals">
+<code class="descname">decimals</code><a class="headerlink" href="#ev3dev2.sensor.Sensor.decimals" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of decimal places for the values in the <cite>value&lt;N&gt;</cite>
+attributes of the current mode.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.Sensor.driver_name">
+<code class="descname">driver_name</code><a class="headerlink" href="#ev3dev2.sensor.Sensor.driver_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the sensor device/driver. See the list of [supported
+sensors] for a complete list of drivers.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.Sensor.mode">
+<code class="descname">mode</code><a class="headerlink" href="#ev3dev2.sensor.Sensor.mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current mode. Writing one of the values returned by <cite>modes</cite>
+sets the sensor to that mode.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.Sensor.modes">
+<code class="descname">modes</code><a class="headerlink" href="#ev3dev2.sensor.Sensor.modes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of the valid modes for the sensor.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.Sensor.num_values">
+<code class="descname">num_values</code><a class="headerlink" href="#ev3dev2.sensor.Sensor.num_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of <cite>value&lt;N&gt;</cite> attributes that will return a valid value
+for the current mode.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.Sensor.units">
+<code class="descname">units</code><a class="headerlink" href="#ev3dev2.sensor.Sensor.units" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the units of the measured value for the current mode. May return
+empty string</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sensor.Sensor.value">
+<code class="descname">value</code><span class="sig-paren">(</span><em>n=0</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.Sensor.value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value or values measured by the sensor. Check num_values to
+see how many values there are. Values with N &gt;= num_values will return
+an error. The values are fixed point numbers, so check decimals to see
+if you need to divide to get the actual value.</p>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="ev3dev2.sensor.Sensor.bin_data_format">
+<code class="descname">bin_data_format</code><a class="headerlink" href="#ev3dev2.sensor.Sensor.bin_data_format" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the format of the values in <cite>bin_data</cite> for the current mode.
+Possible values are:</p>
+<ul class="simple">
+<li><cite>u8</cite>: Unsigned 8-bit integer (byte)</li>
+<li><cite>s8</cite>: Signed 8-bit integer (sbyte)</li>
+<li><cite>u16</cite>: Unsigned 16-bit integer (ushort)</li>
+<li><cite>s16</cite>: Signed 16-bit integer (short)</li>
+<li><cite>s16_be</cite>: Signed 16-bit integer, big endian</li>
+<li><cite>s32</cite>: Signed 32-bit integer (int)</li>
+<li><cite>float</cite>: IEEE 754 32-bit floating point (float)</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="ev3dev2.sensor.Sensor.bin_data">
+<code class="descname">bin_data</code><span class="sig-paren">(</span><em>fmt=None</em><span class="sig-paren">)</span><a class="headerlink" href="#ev3dev2.sensor.Sensor.bin_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the unscaled raw values in the <cite>value&lt;N&gt;</cite> attributes as raw byte
+array. Use <cite>bin_data_format</cite>, <cite>num_values</cite> and the individual sensor
+documentation to determine how to interpret the data.</p>
+<p>Use <cite>fmt</cite> to unpack the raw bytes into a struct.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">ev3dev2.sensor.lego</span> <span class="k">import</span> <span class="n">InfraredSensor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ir</span> <span class="o">=</span> <span class="n">InfraredSensor</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ir</span><span class="o">.</span><span class="n">value</span><span class="p">()</span>
+<span class="go">28</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ir</span><span class="o">.</span><span class="n">bin_data</span><span class="p">(</span><span class="s1">&#39;&lt;b&#39;</span><span class="p">)</span>
+<span class="go">(28,)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2015, Ralph Hempel et al.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.8.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
